@@ -9,8 +9,9 @@
     <title>HummaKos</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
 
@@ -18,7 +19,10 @@
 
 <body>
     <div>
+
+         @if(!request()->routeIs('login') && !request()->routeIs('register'))
         @include('landing.layouts.navbar')
+        @endif
 
 
         <!-- Page Content -->
@@ -34,6 +38,9 @@
     </script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
 </body>
+
+ @if(!request()->routeIs('login') && !request()->routeIs('register'))
 @include('landing.layouts.footer')
+@endif
 
 </html>

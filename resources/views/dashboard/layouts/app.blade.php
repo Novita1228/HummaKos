@@ -9,21 +9,30 @@
     <title>HummaKos</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
 
 </head>
 
 <body>
-    <div>
+    <div class="d-flex">
+        <!-- Sidebar Overlay for Mobile -->
+        <div class="sidebar-overlay d-md-none" id="sidebarOverlay"></div>
+
         @include('dashboard.layouts.sidebar')
 
-
         <!-- Page Content -->
-        <main>
-            @yield('content')
+        <main class="flex-grow-1 main-content" style="min-height: 100vh; background-color: #f8f9fa; transition: margin-left 0.3s ease;">
+            <!-- Mobile Header / Toggler -->
+            @include('dashboard.layouts.mobile-navbar')
+
+            <div class="p-4">
+                @yield('content')
+            </div>
         </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
