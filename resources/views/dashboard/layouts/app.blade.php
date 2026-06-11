@@ -15,6 +15,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/dashboard.css') }}">
 
 </head>
 
@@ -23,14 +24,20 @@
         <!-- Sidebar Overlay for Mobile -->
         <div class="sidebar-overlay d-md-none" id="sidebarOverlay"></div>
 
+        
         @include('dashboard.layouts.sidebar')
 
         <!-- Page Content -->
-        <main class="flex-grow-1 main-content" style="min-height: 100vh; background-color: #f8f9fa; transition: margin-left 0.3s ease;">
+        <main class="flex-grow-1 main-content" style="min-height: 100vh; background-color: #f8f9fa; transition: margin-left 0.3s ease; min-width: 0;">
             <!-- Mobile Header / Toggler -->
+
             @include('dashboard.layouts.mobile-navbar')
 
-            <div class="p-4">
+            <!-- Desktop Navbar -->
+              @if(!request()->routeIs('user.room.book') && !request()->routeIs('profile.edit'))
+            @include('dashboard.layouts.navbar')
+@endif
+            <div class="p-3 p-md-4">
                 @yield('content')
             </div>
         </main>

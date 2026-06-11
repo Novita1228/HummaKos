@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-3 sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom py-3 sticky-top landing-navbar">
     <div class="container">
         <a class="navbar-brand fw-bolder text-primary d-flex align-items-center gap-2" href="#">
             <img src="{{ asset('assets/img/logonew.PNG') }}" alt="HummaKos Logo" style="height: 70px; width: auto; max-width: 100%;">
@@ -12,10 +12,10 @@
                     <a class="nav-link active fw-medium px-3 text-primary" aria-current="page" href="#">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-medium px-3 text-secondary" href="#">Cari Kamar</a>
+                    <a class="nav-link fw-medium px-3 text-secondary" href="#features">Fitur</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link fw-medium px-3 text-secondary" href="#">Tentang Kami</a>
+                    <a class="nav-link fw-medium px-3 text-secondary" href="#about">Tentang Kami</a>
                 </li>
             </ul>
         </div>

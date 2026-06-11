@@ -17,3 +17,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Script to update file name for inputs
+document.addEventListener('DOMContentLoaded', function() {
+    const imageInput = document.getElementById('image');
+    const fileNameDisplay = document.getElementById('file-name-display');
+    if (imageInput && fileNameDisplay) {
+        imageInput.addEventListener('change', function(e) {
+            var fileName = e.target.files[0] ? e.target.files[0].name : 'Klik atau seret foto ke sini';
+            fileNameDisplay.textContent = fileName;
+        });
+    }
+});

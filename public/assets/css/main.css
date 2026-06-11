@@ -6,7 +6,7 @@
 }
 
 html, body {
-    overflow-x: hidden;
+    overflow-x: clip;
     width: 100%;
 }
 
@@ -170,3 +170,53 @@ body {
         padding-left: 4px;
         transition: all 0.2s ease;
     }
+
+/* Custom Tenant Pages Styles */
+body {
+    background-color: #fafafa !important;
+}
+
+button[type="submit"]:hover {
+    background-color: #00897B !important;
+    transition: background-color 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+}
+
+/* Customizing Pagination */
+.pagination .page-item .page-link {
+    color: #555;
+    border-radius: 6px;
+    margin: 0 3px;
+    border: 1px solid #dee2e6;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 14px;
+}
+.pagination .page-item.active .page-link {
+    background-color: #00897B;
+    border-color: #00897B;
+    color: white;
+}
+
+/* Fix Mobile Navbar Landing Page */
+@media (max-width: 991.98px) {
+    .landing-navbar .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        z-index: 1050;
+        padding: 1rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid #eef0f2;
+    }
+}

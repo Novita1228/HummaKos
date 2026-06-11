@@ -36,7 +36,7 @@
 </section>
 
 <!-- Layanan & Fasilitas Penghuni -->
-<section class="py-5 bg-white">
+<section id="features" class="py-5 bg-white">
     <div class="container text-center mb-5">
         <h2 class="fw-bold mb-3 fs-3">Layanan & Fasilitas Penghuni</h2>
         <p class="text-muted mx-auto" style="max-width: 600px; line-height: 1.6;">Kami berkomitmen memberikan pengalaman tinggal terbaik dengan dukungan sistem digital yang memudahkan segala urusan hunian Anda.</p>
@@ -76,7 +76,7 @@
 </section>
 
 <!-- Tentang Kami -->
-<section class="py-5 my-md-5">
+<section id="about" class="py-5 my-md-5">
     <div class="container text-center mb-5">
         <h2 class="fw-bold fs-3">Tentang Kami</h2>
     </div>
@@ -108,31 +108,4 @@
     </div>
 </section>
 
-<!-- Call to Action -->
-<section class="py-5 mb-5">
-    <div class="container">
-        <div class="bg-dark text-white rounded-5 shadow-lg overflow-hidden position-relative hover-perspective-container">
-            <div class="row align-items-center g-0 h-100">
-                <div class="col-lg-6 p-5">
-                    <div class="d-flex align-items-center justify-content-center bg-primary bg-opacity-10 text-primary rounded-4 mb-4" style="width: 56px; height: 56px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
-                        </svg>
-                    </div>
-                    <h2 class="fw-bold mb-3 display-6" style="color: var(--primary);">Komunitas Terintegrasi</h2>
-                    <p class="mb-4" style="color: #adb5bd; line-height: 1.8; font-size: 1.05rem;">Dapatkan info terkini seputar kegiatan penghuni, pengumuman penting, dan promo eksklusif dari partner kami langsung di dashboard Anda.</p>
-                    <a href="#" class="text-white text-decoration-none fw-semibold d-inline-flex align-items-center" style="font-size: 1.05rem;">
-                        Lihat Pengumuman Terbaru
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="ms-2" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-                        </svg>
-                    </a>
-                </div>
-                <div class="col-lg-6 p-5 d-flex align-items-center justify-content-center overflow-hidden h-100">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dashboard Mockup" class="cta-image">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 @endsection
