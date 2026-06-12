@@ -50,10 +50,10 @@
                         </div>
                         <div>
                             <div class="text-muted" style="font-size: 10px; font-weight: 600;">Jatuh Tempo Berikutnya</div>
-                            <div class="fw-bold text-dark" style="font-size: 13px;">15 Oktober 2023</div>
+                            <div class="fw-bold text-dark" style="font-size: 13px;">15 Desember 2026</div>
                         </div>
                     </div>
-                    <button class="btn btn-primary btn-sm px-3" style="font-size: 12px; font-weight: 600;">Bayar Sekarang</button>
+                    <a href="#" class="btn btn-primary btn-sm px-3" style="font-size: 12px; font-weight: 600;">Bayar Sekarang</a>
                 </div>
             </div>
         </div>

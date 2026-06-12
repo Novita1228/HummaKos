@@ -220,3 +220,7 @@ button[type="submit"]:hover {
         border-bottom: 1px solid #eef0f2;
     }
 }
+
+.btn profile {
+    margin-right:auto !important;
+}

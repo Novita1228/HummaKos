@@ -18,6 +18,25 @@ class UserMyRoomController extends Controller
             ->whereIn('status', ['pending', 'active'])
             ->first();
 
-        return view('dashboard.role.penyewa.kamar-saya', compact('tenant'));
+        $nextDueDate = null;
+        $showPaymentButton = false;
+
+        if ($tenant && $tenant->status === 'active') {
+            $startDate = \Carbon\Carbon::parse($tenant->start_date);
+            $endDate = \Carbon\Carbon::parse($tenant->end_date);
+            $now = \Carbon\Carbon::now();
+
+            $monthsPassed = $startDate->diffInMonths($now);
+            $nextDueDate = $startDate->copy()->addMonths($monthsPassed + 1);
+
+            if ($nextDueDate->greaterThanOrEqualTo($endDate)) {
+                $showPaymentButton = false;
+            } else {
+                $daysToDueDate = $now->diffInDays($nextDueDate, false);
+                $showPaymentButton = $daysToDueDate <= 7;
+            }
+        }
+
+        return view('dashboard.role.penyewa.kamar-saya', compact('tenant', 'nextDueDate', 'showPaymentButton'));
     }
 }

@@ -79,14 +79,7 @@
             <p class="text-muted mb-0" style="font-size: 14px;">Memantau dan mengelola semua unit yang tersedia di seluruh properti.</p>
         </div>
         <div class="d-flex flex-wrap gap-2">
-            <button class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-2" style="font-size: 12px; font-weight: 600;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zM2.646 2v1.207l4.155 4.986A.5.5 0 0 1 7 8.5v4.793l2-.667V8.5a.5.5 0 0 1 .199-.393L13.354 3.207V2H2.646z"/></svg>
-                Filter
-            </button>
-            <button class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-2" style="font-size: 12px; font-weight: 600;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/><path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/></svg>
-                Export
-            </button>
+
             <a href="{{ route('admin.room-types.create') }}" class="btn btn-primary btn-sm d-flex align-items-center gap-2" style="font-size: 12px; font-weight: 600;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/></svg>
                 Tambah Tipe Kamar
@@ -111,10 +104,6 @@
                 <span class="status-badge bg-gray-light text-muted" style="font-size: 10px; font-weight: 600;">Updated 5m ago</span>
             </div>
             <div class="d-flex gap-2 align-items-center">
-                <button class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-2" style="font-size: 12px; font-weight: 600; background-color: #f8f9fa;">
-                    All Status
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>
-                </button>
                 <form action="{{ route('admin.room-types.destroy', $type) }}" method="POST" class="m-0 p-0" onsubmit="return confirm('Apakah Anda yakin ingin menghapus tipe kamar ini beserta semua kamar di dalamnya?')">
                     @csrf
                     @method('DELETE')
@@ -186,7 +175,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/><path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H5.5l1-1h3l1 1H14a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/></svg>
                                     </button>
                                 </form>
-                                <a href="#" class="btn btn-primary btn-sm px-3" style="font-size: 11px; font-weight: 600; padding-top: 4px; padding-bottom: 4px;">Lihat</a>
+
                             </div>
                         </td>
                     </tr>
@@ -205,7 +194,7 @@
                 <button class="btn btn-link text-muted p-0 text-decoration-none">25</button>
                 <button class="btn btn-link text-muted p-0 text-decoration-none">&gt;</button>
             </div>
-        </div>
+        </div
         @else
         <div class="text-center text-muted py-4" style="font-size: 14px;">
             <p class="mb-2">Belum ada kamar untuk tipe ini.</p>

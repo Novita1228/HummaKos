@@ -72,7 +72,14 @@
                         @enderror
                     </div>
 
-                    <button type="submit" class="btn text-white fw-bold px-4" style="background-color: #00897B; border-radius: 8px;">Simpan Profil</button>
+                    <div class="mb-5">
+                        <label for="phone" class="form-label" style="font-size: 12px; font-weight: 600;">Nomor Telepon</label>
+                        <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" value="{{ old('phone', $user->phone) }}" required autocomplete="phone">
+                        @error('phone')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <button type="submit" class="btn btn-profile text-white fw-bold px-4 " style=" background-color: #ff0000;">Simpan Profil</button>
                 </form>
             </div>
         </div>

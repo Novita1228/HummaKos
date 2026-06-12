@@ -28,14 +28,14 @@
     <!-- Pending State -->
     <div class="dashboard-card text-center py-5 mt-4 d-flex flex-column align-items-center justify-content-center position-relative overflow-hidden" style="min-height: 400px;">
         <div class="position-absolute w-100 h-100" style="background: repeating-linear-gradient(45deg, #f8f9fa, #f8f9fa 10px, #ffffff 10px, #ffffff 20px); opacity: 0.5; z-index: 0;"></div>
-        
+
         <div class="position-relative z-1 d-flex flex-column align-items-center">
             <div class="spinner-grow text-warning mb-3" role="status" style="width: 3rem; height: 3rem;">
                 <span class="visually-hidden">Loading...</span>
             </div>
             <h4 class="fw-bold text-dark mb-2">Menunggu Konfirmasi Admin</h4>
             <p class="text-muted mb-4" style="max-width: 500px; font-size: 14px;">Pemesanan Kamar <strong>{{ $tenant->room->room_number }}</strong> sedang diproses. Tim kami akan segera memverifikasi pembayaran Anda.</p>
-            
+
             <div class="card bg-white shadow-sm border-0 text-start" style="width: 100%; max-width: 350px;">
                 <div class="card-body p-4">
                     <h6 class="fw-bold mb-3" style="font-size: 13px; color: #555;">Detail Pengajuan:</h6>
@@ -77,7 +77,7 @@
                     </div>
                     <span class="badge rounded-pill px-3 py-1" style="background-color: #e8f5e9; color: #2e7d32; font-size: 11px; font-weight: 600;">Sedang Disewa</span>
                 </div>
-                
+
                 <div class="row g-0 flex-grow-1">
                     <div class="col-12 col-md-5 p-4 d-flex justify-content-center align-items-center border-end">
                         @if($tenant->room->image_1)
@@ -104,6 +104,10 @@
                                 <div class="text-muted mb-1" style="font-size: 10px; font-weight: 700; letter-spacing: 0.5px;">BERAKHIR PADA</div>
                                 <h6 class="fw-bold mb-0 text-dark">{{ \Carbon\Carbon::parse($tenant->end_date)->format('d M Y') }}</h6>
                             </div>
+                            <div class="col-6">
+                                <div class="text-muted mb-1" style="font-size: 10px; font-weight: 700; letter-spacing: 0.5px;"> </div>
+                                <h6 class="fw-bold mb-0 text-dark">Informasi : Lakukan pelunasan kekurangan pembayaran saat mengambil kunci kamar diresepsionis</h6>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -114,7 +118,8 @@
         <div class="col-12 col-lg-4">
             <div class="dashboard-card h-100 p-4 d-flex flex-column">
                 <h6 class="fw-bold mb-4 text-dark">Informasi Tagihan</h6>
-                
+
+                @if($nextDueDate && $nextDueDate->lessThan(\Carbon\Carbon::parse($tenant->end_date)))
                 <div class="bg-light p-3 rounded-3 mb-4 flex-grow-1 border">
                     <div class="text-center mb-3">
                         <div class="text-muted mb-1" style="font-size: 12px;">Tagihan Bulan Berikutnya</div>
@@ -123,11 +128,26 @@
                     <hr>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="text-muted" style="font-size: 12px;">Jatuh Tempo:</div>
-                        <div class="fw-bold text-dark" style="font-size: 13px;">{{ \Carbon\Carbon::parse($tenant->start_date)->addMonth()->format('d M Y') }}</div>
+                        <div class="fw-bold text-dark" style="font-size: 13px;">{{ $nextDueDate->format('d M Y') }}</div>
                     </div>
                 </div>
 
-                <button class="btn w-100 fw-bold py-2" style="background-color: #00897B; color: white;">Bayar Sekarang</button>
+                @if($showPaymentButton)
+                <a href="{{ route('user.room.payment', ['room' => $tenant->room->id, 'tenant' => $tenant->id]) }}" class="btn w-100 fw-bold py-2" style="background-color: #00897B; color: white;">Bayar Sekarang</a>
+                @else
+                <button class="btn w-100 fw-bold py-2" style="background-color: #e0e0e0; color: #757575;" disabled>Sudah Dibayar</button>
+                @endif
+
+                @else
+                <!-- No more payments needed -->
+                <div class="bg-light p-3 rounded-3 mb-4 flex-grow-1 border d-flex flex-column align-items-center justify-content-center text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="#4caf50" class="mb-2" viewBox="0 0 16 16">
+                      <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                    </svg>
+                    <h5 class="fw-bold text-success mb-1">Lunas</h5>
+                    <p class="text-muted mb-0" style="font-size: 12px;">Seluruh tagihan untuk sewa ini sudah diselesaikan.</p>
+                </div>
+                @endif
             </div>
         </div>
     </div>

@@ -23,7 +23,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Permintaan Pending -->
         <div class="col-12 col-md-6">
             <div class="dashboard-card h-100 py-3 px-4" style="background-color: #E8F5E9; border: 1px solid #C8E6C9;">
@@ -56,10 +56,7 @@
                 </svg>
                 <input type="text" class="form-control" placeholder="Cari penyewa atau judul keluhan..." style="padding-left: 36px; font-size: 13px; background-color: #f8f9fa; border: 1px solid #eef0f2; border-radius: 8px;">
             </div>
-            <button class="btn btn-outline-secondary btn-sm d-flex align-items-center gap-2" style="font-size: 12px; font-weight: 600; background-color: #f8f9fa; white-space: nowrap;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16"><path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zM2.646 2v1.207l4.155 4.986A.5.5 0 0 1 7 8.5v4.793l2-.667V8.5a.5.5 0 0 1 .199-.393L13.354 3.207V2H2.646z"/></svg>
-                Filter Status
-            </button>
+
         </div>
 
         <!-- Table -->
@@ -155,19 +152,7 @@
         </div>
 
         <!-- Footer Pagination -->
-        <div class="d-flex flex-column flex-md-row justify-content-between align-items-center p-3 border-top" style="background-color: #fafafa;">
-            <span class="text-muted mb-2 mb-md-0" style="font-size: 11px;">Showing 1 to 2 of 12 tenants</span>
-            <div class="d-flex align-items-center gap-2" style="font-size: 11px; font-weight: 600;">
-                <button class="btn btn-link text-muted p-0 text-decoration-none">&lt;</button>
-                <button class="btn btn-primary btn-sm px-2 py-0" style="font-size: 11px; min-width: 20px; background-color: #00897B; border-color: #00897B;">1</button>
-                <button class="btn btn-link text-muted p-0 text-decoration-none">2</button>
-                <button class="btn btn-link text-muted p-0 text-decoration-none">3</button>
-                <span class="text-muted">...</span>
-                <button class="btn btn-link text-muted p-0 text-decoration-none">321</button>
-                <button class="btn btn-link text-muted p-0 text-decoration-none">&gt;</button>
-            </div>
-        </div>
-    </div>
+
 
     <!-- View All Link -->
     <div class="text-center mt-3 mb-5">

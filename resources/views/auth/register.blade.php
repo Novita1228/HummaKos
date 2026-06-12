@@ -47,7 +47,7 @@
                             <div class="col-md-6">
                                 <div class="position-relative">
                                     <label for="phone" class="form-label small fw-semibold text-muted bg-white px-1 position-absolute" style="top: -10px; left: 12px; z-index: 5;">Nomor Telepon</label>
-                                    <input type="text" id="phone" name="phone" class="form-control form-control-lg rounded-3 fs-6 px-3 py-3" placeholder="Masukkan Nomor Telepon" value="{{ old('phone') }}" required>
+                                    <input type="text" id="phone" name="phone" class="form-control form-control-lg rounded-3 fs-6 px-3 py-3" placeholder="Masukkan Nomor Telepon" value="{{ old('phone') }}" required autocomplete="phone">
                                     @error('phone')
                                         <div class="text-danger mt-1 small">{{ $message }}</div>
                                     @enderror
@@ -89,7 +89,7 @@
                         </div>
 
                         <div class="text-center small">
-                            <span class="text-muted">Sudah punya akun?</span> 
+                            <span class="text-muted">Sudah punya akun?</span>
                             <a href="{{ route('login') }}" class="text-primary text-decoration-none fw-semibold">Log In</a>
                         </div>
                     </form>
